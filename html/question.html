@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/LeonarAung/MyanmarFont/ad9e45c3/unicode.css"/>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body style="height: 100%;">
+    <div class="header">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">မေးခွန်းလွှာ</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="question.html?Qtn=1">မေးခွန်းလွှာ ၁</a></li>
+                <li><a class="dropdown-item" href="question.html?Qtn=2">မေးခွန်းလွှာ ၂</a></li>
+                <li><a class="dropdown-item" href="question.html?Qtn=3">မေးခွန်းလွှာ ၃</a></li>
+                <li><a class="dropdown-item" href="question.html?Qtn=4">မေးခွန်းလွှာ ၄</a></li>
+                <li><a class="dropdown-item" href="question.html?Qtn=5">မေးခွန်းလွှာ ၅</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="sign.html">သင်္ဂေတများ</a>
+            </li>
+            <li class="nav-item">
+              <a class="dropdown-item" href="#">
+                <button type="button" data-bs-toggle="modal"  data-bs-target="#exampleModal" class="btn btn-sm mt-1 result disabled" onclick="Sh_Result()">ရလဒ်ကြည့်ရန်</button>
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">ဖြေဆိုမှု ရလဒ်</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body" id="modal_id">
+                          
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" id="btn-modal" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>              
+            </li>
+            
+          </ul>
+    </div>
+
+    <section style="height: 100%!important;">
+      <div class="container-fluid">
+        <div class="title mt-2 text-center" >
+            <h5 id="Qtn_title" style="text-decoration: underline;"></h5>
+            <p>မှတ်ချက်။ ။ မှန်ကန်သော အဖြေမှန်တစ်ခုကိုသာ ရွေးချယ်ရမည်။</p>
+        </div>
+        <div class="container" id="ctn" style="height: 100%!important;">
+          <!-- <div class="card">
+            <div class="card-body">
+              <p class="card-text" id="first"></p>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label id="Ans_one" class="form-check-label" for="flexCheckDefault">
+                    ယာဉ်ကိုကျွမ်းကျင်စွာ မောင်းနှင်နိုင်သူဖြစ်သည်။
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                <label id="Ans_two" class="form-check-label" for="flexCheckChecked">
+                    ဘေးအန္တရာယ်မဖြစ်အောင် ယာဉ်ကို မောင်းနိုင်သူဖြစ်သည်။
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+                <label class="form-check-label" for="flexCheckChecked">
+                    ယာဉ်မောင်းခြင်း အတတ်ပညာကို သင်ကြားပြသပေးနိုင်သူဖြစ်သည်။
+                </label>
+              </div>
+            </div> -->
+          </div>
+          <!-- <div class="card">
+            <div class="card-body">
+              <p class="card-text">စတီယာရင်လက်ကိုင် ဘီးခွေသည်မော်တော်ယာဉ်တစ်စီး၏ အဓိကကျသော အစိတ်အပိုင်းတစ်ခုဖြစ်သဖြင့်</p>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                  စတီယာရင်ကို ကောင်းမွန်အောင်အမြဲ ပြုပြင်ထိန်း သိမ်းစစ်ဆေးရမည်။
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                <label class="form-check-label" for="flexCheckChecked">
+                    မော်တော်ယာဉ်တည်ငြိမ်မှုရှိရန်နှင့် အချိန်အဆကို ဆောင်ရွက်ပေးသည်။
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+                <label class="form-check-label" for="flexCheckChecked">
+                    ယာ်ဉ်မောင်းနှင်မှုအဆင်ပြေအောင်ဆောင်ရွက်‌ပေးသည်။
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text">ဘယ်ဘက်ရှိ ကားပါကင်နေရာသို့ နောက်ဆုတ်ဝင်သည့်အခါ စတီယာရင်အား</p>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                  သင်၏ဘယ်ဘက်သို့ လှည့်ရမည်။
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                <label class="form-check-label" for="flexCheckChecked">
+                    ညာဘက်သို့ လှည့်ရမည်။
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+                <label class="form-check-label" for="flexCheckChecked">
+                    ဘရိတ်များ အသုံးပြုပြီး မော်တော်ကား၏ အမြန်နှုန်းကို ညင်သာစွာထိန်းသိမ်းရမည်။
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text">မည်သည့်အချိန်တွင် ဟွန်းတီးရမည်နည်း။</p>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                  လူအများ လမ်းတဘက်သို့ကူးမည့်အခါ
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                <label class="form-check-label" for="flexCheckChecked">
+                    အခြားလူများကို အန္တရာယ်မဖြစ်အောင် သတိပေးသောအခါ
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+                <label class="form-check-label" for="flexCheckChecked">
+                    လမ်းဦးစားပေးရန် တိုက်တွန်းသောအခါ
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text">စုံအချက်ပြမီးကို သုံးရမည့်အခြေအနေမှာ-</p>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                  မီးပွိုင့်လမ်းဆုံတွင်ရပ်စဉ်
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                <label class="form-check-label" for="flexCheckChecked">
+                    မီးမထွန်းသောလမ်းပေါ်တွင် မောင်းနှင်စဉ်။
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+                <label class="form-check-label" for="flexCheckChecked">
+                    သင်၏ ယာဉ်ချို့ယွင်း၍ ရပ်နေစဉ်။
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text">အပူချိန်ပြဂိတ်တွင် လက်တံသည် အနီရောင် အစိတ်အပိုင်းကို ညွှန်ပြနေခြင်းသည်-</p>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                  အင်ဂျင်ဝိုင် ကုန်ခမ်းသွားခြင်းကိုပြသည်။
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                <label class="form-check-label" for="flexCheckChecked">
+                    အင်ဂျင်ဝိုင် အပူလွန်ကဲမှုကိုပြသည်။
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+                <label class="form-check-label" for="flexCheckChecked">
+                    အင်ဂျင်အပူလွန်ကဲမှူကို ပြသည်။
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text">ဘရိတ်မီးလင်းနေရခြင်းမှာ ဘရိတ်ဆီနည်းကြောင်း ညွှန်ပြခြင်းအပြင်.....ကြောင့်ဖြစ်သည်။</p>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                  ဘရိတ်တုံးပျက်ခြင်း၊
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                <label class="form-check-label" for="flexCheckChecked">
+                    လက်ဆွဲဘရိတ်ကို အပြည့်အဝပြန်မလွှတ်ရသေးခြင်း၊
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+                <label class="form-check-label" for="flexCheckChecked">
+                    အထက်ဖော်ပြပါ နှစ်ခုလုံး။
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text">ယာဉ်မတော်တဆမှုဖြစ်ပေါ်ပါက ထိခိုက်ဒဏ်ရာရ သေဆုံးမှုမှ လျော့နည်းစေရန် ထိုင်ခုံခါးပတ်ကို ပတ်ရမည့်သူမှာ....ဖြစ်သည်။</p>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                  ယာဉ်မောင်းသာလျှင်၊
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                <label class="form-check-label" for="flexCheckChecked">
+                    ရှေ့ခရီးသည်နှင့် ယာဉ်မောင်းသာလျှင်၊
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+                <label class="form-check-label" for="flexCheckChecked">
+                    ယာဉ်မောင်းနှင့် ခရီးသည်အားလုံး၊
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text">ယာဉ်မောင်းသူသည် နောက်ကြည့်မှန်မှတဆင့်မြင်နိုင်သည်မှာ....ဖြစ်သည်။</p>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                  နောက်မှခရီးသည်များ၊
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                <label class="form-check-label" for="flexCheckChecked">
+                    နောက်ကြည့်လေကာမှန်မှ တဆင့်မြင်ကွင်း၊
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+                <label class="form-check-label" for="flexCheckChecked">
+                    အထက်ဖော်ပြပါ နှစ်ခုလုံး။
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text">သင်၏ကား ရှေ့သို့ရုတ်တရတ် ဆောင့်ထွက်သွားရခြင်းမှာ-</p>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                  ကလပ်ကို ဖြေးညင်းစွာ လွှတ်လိုက်သောကြောင့်ဖြစ်သည်။
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                <label class="form-check-label" for="flexCheckChecked">
+                    အရှိန်မလုံလောက်သောကြောင့်ဖြစ်သည်။
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+                <label class="form-check-label" for="flexCheckChecked">
+                    ကလပ်ကို လျှင်မြန်စွာ လွှတ်လိုက်သောကြောင့်ဖြစ်သည်။
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img class="signimage" src="images/sign1.png" class="img-fluid rounded-start" alt="">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <p class="card-text">သင်၏ကား ရှေ့သို့ရုတ်တရတ် ဆောင့်ထွက်သွားရခြင်းမှာ-</p>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                          ကလပ်ကို ဖြေးညင်းစွာ လွှတ်လိုက်သောကြောင့်ဖြစ်သည်။
+                        </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                        <label class="form-check-label" for="flexCheckChecked">
+                          အရှိန်မလုံလောက်သောကြောင့်ဖြစ်သည်။
+                        </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+                        <label class="form-check-label" for="flexCheckChecked">
+                          ကလပ်ကို လျှင်မြန်စွာ လွှတ်လိုက်သောကြောင့်ဖြစ်သည်။
+                        </label>
+                    </div>
+                </div>
+              </div>
+            </div>
+            </div>
+            <div class="card">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img class="signimage" src="images/sign1.png" class="img-fluid rounded-start" alt="">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <p class="card-text">သင်၏ကား ရှေ့သို့ရုတ်တရတ် ဆောင့်ထွက်သွားရခြင်းမှာ-</p>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                          <label class="form-check-label" for="flexCheckDefault">
+                            ကလပ်ကို ဖြေးညင်းစွာ လွှတ်လိုက်သောကြောင့်ဖြစ်သည်။
+                          </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                          <label class="form-check-label" for="flexCheckChecked">
+                            အရှိန်မလုံလောက်သောကြောင့်ဖြစ်သည်။
+                          </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+                          <label class="form-check-label" for="flexCheckChecked">
+                            ကလပ်ကို လျှင်မြန်စွာ လွှတ်လိုက်သောကြောင့်ဖြစ်သည်။
+                          </label>
+                      </div>
+                  </div>
+                </div>
+              </div>
+              </div>
+              <div class="card">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img class="signimage" src="images/sign1.png" class="img-fluid rounded-start" alt="">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <p class="card-text">သင်၏ကား ရှေ့သို့ရုတ်တရတ် ဆောင့်ထွက်သွားရခြင်းမှာ-</p>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                              ကလပ်ကို ဖြေးညင်းစွာ လွှတ်လိုက်သောကြောင့်ဖြစ်သည်။
+                            </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                            <label class="form-check-label" for="flexCheckChecked">
+                              အရှိန်မလုံလောက်သောကြောင့်ဖြစ်သည်။
+                            </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+                            <label class="form-check-label" for="flexCheckChecked">
+                              ကလပ်ကို လျှင်မြန်စွာ လွှတ်လိုက်သောကြောင့်ဖြစ်သည်။
+                            </label>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+                <div class="card">
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <img class="signimage" src="images/sign1.png" class="img-fluid rounded-start" alt="">
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <p class="card-text">သင်၏ကား ရှေ့သို့ရုတ်တရတ် ဆောင့်ထွက်သွားရခြင်းမှာ-</p>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                              <label class="form-check-label" for="flexCheckDefault">
+                                ကလပ်ကို ဖြေးညင်းစွာ လွှတ်လိုက်သောကြောင့်ဖြစ်သည်။
+                              </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                              <label class="form-check-label" for="flexCheckChecked">
+                                အရှိန်မလုံလောက်သောကြောင့်ဖြစ်သည်။
+                              </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+                              <label class="form-check-label" for="flexCheckChecked">
+                                ကလပ်ကို လျှင်မြန်စွာ လွှတ်လိုက်သောကြောင့်ဖြစ်သည်။
+                              </label>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                  </div>
+                  <div class="card">
+                    <div class="row g-0">
+                      <div class="col-md-4">
+                        <img class="signimage" src="images/sign1.png" class="img-fluid rounded-start" alt="">
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <p class="card-text">သင်၏ကား ရှေ့သို့ရုတ်တရတ် ဆောင့်ထွက်သွားရခြင်းမှာ-</p>
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                  ကလပ်ကို ဖြေးညင်းစွာ လွှတ်လိုက်သောကြောင့်ဖြစ်သည်။
+                                </label>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                                <label class="form-check-label" for="flexCheckChecked">
+                                  အရှိန်မလုံလောက်သောကြောင့်ဖြစ်သည်။
+                                </label>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+                                <label class="form-check-label" for="flexCheckChecked">
+                                  ကလပ်ကို လျှင်မြန်စွာ လွှတ်လိုက်သောကြောင့်ဖြစ်သည်။
+                                </label>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="row g-0">
+                      <div class="col-md-4">
+                        <img class="signimage" src="images/sign1.png" class="img-fluid rounded-start" alt="">
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <p class="card-text">သင်၏ကား ရှေ့သို့ရုတ်တရတ် ဆောင့်ထွက်သွားရခြင်းမှာ-</p>
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                  ကလပ်ကို ဖြေးညင်းစွာ လွှတ်လိုက်သောကြောင့်ဖြစ်သည်။
+                                </label>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                                <label class="form-check-label" for="flexCheckChecked">
+                                  အရှိန်မလုံလောက်သောကြောင့်ဖြစ်သည်။
+                                </label>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+                                <label class="form-check-label" for="flexCheckChecked">
+                                  ကလပ်ကို လျှင်မြန်စွာ လွှတ်လိုက်သောကြောင့်ဖြစ်သည်။
+                                </label>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                    <div class="card">
+                      <div class="row g-0">
+                        <div class="col-md-4">
+                          <img class="signimage" src="images/sign1.png" class="img-fluid rounded-start" alt="">
+                        </div>
+                        <div class="col-md-8">
+                          <div class="card-body">
+                            <p class="card-text">သင်၏ကား ရှေ့သို့ရုတ်တရတ် ဆောင့်ထွက်သွားရခြင်းမှာ-</p>
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                  <label class="form-check-label" for="flexCheckDefault">
+                                    ကလပ်ကို ဖြေးညင်းစွာ လွှတ်လိုက်သောကြောင့်ဖြစ်သည်။
+                                  </label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                                  <label class="form-check-label" for="flexCheckChecked">
+                                    အရှိန်မလုံလောက်သောကြောင့်ဖြစ်သည်။
+                                  </label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+                                  <label class="form-check-label" for="flexCheckChecked">
+                                    ကလပ်ကို လျှင်မြန်စွာ လွှတ်လိုက်သောကြောင့်ဖြစ်သည်။
+                                  </label>
+                              </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                      <div class="card">
+                        <div class="row g-0">
+                          <div class="col-md-4">
+                            <img class="signimage" src="images/sign1.png" class="img-fluid rounded-start" alt="">
+                          </div>
+                          <div class="col-md-8">
+                            <div class="card-body">
+                              <p class="card-text">သင်၏ကား ရှေ့သို့ရုတ်တရတ် ဆောင့်ထွက်သွားရခြင်းမှာ-</p>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                      ကလပ်ကို ဖြေးညင်းစွာ လွှတ်လိုက်သောကြောင့်ဖြစ်သည်။
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                                    <label class="form-check-label" for="flexCheckChecked">
+                                      အရှိန်မလုံလောက်သောကြောင့်ဖြစ်သည်။
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+                                    <label class="form-check-label" for="flexCheckChecked">
+                                      ကလပ်ကို လျှင်မြန်စွာ လွှတ်လိုက်သောကြောင့်ဖြစ်သည်။
+                                    </label>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                        <div class="card">
+                          <div class="row g-0">
+                            <div class="col-md-4">
+                              <img class="signimage" src="images/sign1.png" class="img-fluid rounded-start" alt="">
+                            </div>
+                            <div class="col-md-8">
+                              <div class="card-body">
+                                <p class="card-text">သင်၏ကား ရှေ့သို့ရုတ်တရတ် ဆောင့်ထွက်သွားရခြင်းမှာ-</p>
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                      <label class="form-check-label" for="flexCheckDefault">
+                                        ကလပ်ကို ဖြေးညင်းစွာ လွှတ်လိုက်သောကြောင့်ဖြစ်သည်။
+                                      </label>
+                                  </div>
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                                      <label class="form-check-label" for="flexCheckChecked">
+                                        အရှိန်မလုံလောက်သောကြောင့်ဖြစ်သည်။
+                                      </label>
+                                  </div>
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+                                      <label class="form-check-label" for="flexCheckChecked">
+                                        ကလပ်ကို လျှင်မြန်စွာ လွှတ်လိုက်သောကြောင့်ဖြစ်သည်။
+                                      </label>
+                                  </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                          <div class="card">
+                            <div class="row g-0">
+                              <div class="col-md-4">
+                                <img class="signimage" src="images/sign1.png" class="img-fluid rounded-start" alt="">
+                              </div>
+                              <div class="col-md-8">
+                                <div class="card-body">
+                                  <p class="card-text">သင်၏ကား ရှေ့သို့ရုတ်တရတ် ဆောင့်ထွက်သွားရခြင်းမှာ-</p>
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                          ကလပ်ကို ဖြေးညင်းစွာ လွှတ်လိုက်သောကြောင့်ဖြစ်သည်။
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                                        <label class="form-check-label" for="flexCheckChecked">
+                                          အရှိန်မလုံလောက်သောကြောင့်ဖြစ်သည်။
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+                                        <label class="form-check-label" for="flexCheckChecked">
+                                          ကလပ်ကို လျှင်မြန်စွာ လွှတ်လိုက်သောကြောင့်ဖြစ်သည်။
+                                        </label>
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div> -->
+          </div>
+       </div>
+       <div class="pagination-box">
+        <div class="pagination ">
+          <button type="button" class="prev disabled btn btn-small btn-secondry" ><i>Prev</i></button>
+          <div class="page">Page<span class="page-num"></span></div>
+          <button type="button" class="next btn btn-small btn-secondry"><i>Next</i></button>
+        </div> 
+      </div>
+    </section>   
+
+    <div class="container-box mt-2 border">
+
+        <footer class=" text-center text-black">
+    
+            <div class="text-center p-3">
+                © 2020 Copyright:
+                <i>ThuRa Aung</i>
+            </div>
+    <!-- Copyright -->
+        </footer>    
+    </div>
+  <!-- End of .container -->
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script type="module" src="/js/Data.js"></script>
+  <script src="/js/ShowResult.js"></script>
+  <!-- <script src="js/pagination.js"></script> -->
+  
+</body>
+</html>

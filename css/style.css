@@ -1,0 +1,209 @@
+body{
+    height: 100%;
+}
+.content{
+    height: 500px;
+}
+.container-box{
+    
+    margin:0% 0% 0% 0% !important;
+    padding: 0% 0% 0% 0% !important;
+}
+.container .card{
+    margin-top: 1rem;
+}
+.container-box footer{
+    width: 100%;    
+}
+.container-fluid .cardone p{
+    line-height: 2rem;
+}
+.container-fluid .cardtwo p{
+    line-height: 2.5rem;
+} 
+.container .card.hide{
+    display: none;
+}
+.container .card.show{
+    display: block;
+    animation: show .5s ease;
+}
+.container-box{
+    position: absolute;
+    width: 100%;
+    margin-top: auto;
+}
+@media screen and (max-width:765px) {
+    .signimage{
+        width: 100%;
+        height: auto;
+    }
+}
+@media  screen and (min-width: 768px) {
+    #ctn{
+        max-width: 100% !important;
+    }
+}
+
+@keyframes show {
+    0%{
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+.pagination{
+    width: 100%;
+    float:right;
+    padding: 15px;
+    justify-content: center;
+    align-content: space-between;
+    align-items: baseline;
+    justify-content: space-around;
+}
+.pagination div{
+    display: block;
+    position: relative;
+    margin:0 10px;
+    
+}
+.pagination .page{
+    color:gray;
+    pointer-events: none;
+    
+       
+}
+.pagination .prev,.pagination .next{
+    color: #000;
+    border: 1px solid #000;
+    font-size: 15px;
+    padding: 8px 15px;
+    cursor: pointer;
+    
+}
+.pagination .prev.disabled,
+.pagination .next.disabled{
+    border-color: gray;
+    color: gray;
+    pointer-events: none;
+}
+.pagination-box{
+    height: 55px;   
+}
+
+/*@media screen and (max-width:820px) {
+    .content{
+        min-height: 500px;
+    }
+    .cardone{
+        height: 380px !important;
+    }
+    .cardone .card-body{
+        margin-top: 10px;      
+    }
+    .cardone .card-body p,.cardone .card-body a{
+        margin-top: 20px;
+    }
+    .cardtwo{
+        height: 350px !important;
+    }
+    .cardtwo .card-body .card-title{
+        margin-top: 10px;
+    }
+    .cardtwo .card-body p{
+        line-height: 50px;
+    }
+}
+@media screen and (max-width:912px) {
+    .content{
+        height: 730px;
+    }
+    .cardone{
+        height: 350px !important;
+    }
+    .cardone .card-body{
+        margin-top: 10px;      
+    }
+    .cardone .card-body p,.cardone .card-body a{
+        margin-top: 20px;
+        
+    }
+    .cardone .card-body p{
+        line-height: 40px;
+    }
+    .cardtwo{
+        height: 350px !important;
+    }
+    .cardtwo .card-body .card-title{
+        margin-top: 15px;
+    }
+    .cardtwo .card-body p{
+        line-height: 50px;
+    }
+}
+/*@media screen and (max-height:720px) {
+    .content{
+        min-height: 700px;
+    }
+    
+}*/
+/*@media screen and (max-height:914px) {
+    .content{
+        min-height: 700px;
+    }    
+}
+@media screen and (max-width:540px){
+    .cardone{
+        height: 420px !important;
+    }
+    .cardone .card-body p{
+        line-height: normal;
+    }
+    .cardtwo{
+        height: 350px !important;
+    }
+}
+@media screen and (max-width:414px) {
+    .content{
+        height: 850px !important;
+    }
+    .cardone{
+        height: 470px !important;
+    }
+    .cardone .card-body p{
+        line-height: normal;
+    }
+    .cardtwo{
+        height: 390px !important;
+    }   
+}
+@media screen and (min-width:1024px) {
+    .content{
+        height: 650px !important;
+    }
+    .cardone{
+        height: 350px !important;
+    }
+    .cardone .card-body{
+        margin-top: 10px;      
+    }
+    .cardone .card-body p,.cardone .card-body a{
+        margin-top: 20px;
+        
+    }
+    .cardone .card-body p{
+        line-height: 40px;
+    }
+    .cardtwo{
+        height: 350px !important;
+    }
+    .cardtwo .card-body .card-title{
+        margin-top: 15px;
+    }
+    .cardtwo .card-body p{
+        line-height: 50px;
+    }
+}*/
